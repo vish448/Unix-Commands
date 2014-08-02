@@ -4,6 +4,7 @@ Commands List
 Unix Commands Structure.
 Command option argument
 
+==============
 BASIC COMMANDS
 ===============
 
@@ -25,4 +26,67 @@ cd ~ : to go to your user directory.
 cd - : toggle between current direcotry and recent directory.
 
 pwd : present working directory.
+
+=======================
+CREATING FILE COMMANDS
+=======================
+touch FILE_NAME : will create a file for you. it also updates the last modified time of the file. 
+
+vim FILE_NAME : to edit the file in text editor. old editor
  
+nano FILE_NAME : to edit files. NEW IMPROVED EDITOR
+
+=====================
+READING FILE COMMANDS
+=====================
+
+cat FILE_NAME : the file will display to read.
+
+cat FILE_NAME newFILE_NAME : to concatenate two files.
+
+more FILE_NAME : to read file with pagination. The only issue is you can not go back to your previous page. To improve that unix introduce with new command called less
+
+less FILE_NAME : you will get full control over you reading a file from your unix system. 
+Few commands attach with you less
+f(forward) and b(backward) to paginate through your big text files.
+G: go to end of your file
+g: go to begining of your file.
+q: quit go to command prompt.
+
+less -M FILE_NAME : To show lines and while you're reading a file.
+
+less -N FILE_NAME : To show line numbers while you're reading.
+
+** Reading portion of the file **
+
+head FILE_NAME : to display first few portion of the file.
+
+tail FILE_NAME : to display last few portion of the file.
+
+**tail -f FILE_NAME : to follow the file if any changes has been made.
+
+====
+NOTE : This follow command is very useful to check log files in your system. For example: if you have file server running on your system. you can follow the log file of your system and see what requests are comming to the server.
+====
+
+
+====================
+CREATING DIRECTORIES
+====================
+
+mkdir DIR_NAME : to create a directory.
+
+mkdir -p DIR_NAME/DIR2_NAME/DIR3_NAME : to create multiple directory with one command.
+
+===============================
+MOVING AND RENAMING DIRECTORIES
+===============================
+ 
+mv FILE_NAME DESTINATION : moving file from one to another folder.  
+option attached with mv.
+-n : no overwriting
+-f : force overwriting [Default]
+-i : interactive overwriting, "Ask me"
+-v : verbose
+
+
