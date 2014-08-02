@@ -1,0 +1,28 @@
+Commands List
+=============
+
+Unix Commands Structure.
+Command option argument
+
+BASIC COMMANDS
+===============
+
+echo "Message" : To print something on your screen.
+banner -w20 "Message" : to print banner on your screen with width of 20.
+
+man <Command> : To see command manual. Command HELP
+ls : list directory.
+ls -a : list all directory and files with hidden files
+ls -lah : Full details for files and direcotry. OR 
+ls -l -a -h : -l for long list, -a all files, -h for size of the files in proper format.
+cd DIRECTORY_NAME : Change directory name.
+cd .. : go one directory.
+cd DIR!/DIR2 : to change the multiple directories at once.
+cd ../.. : to jump multiple folders at once.
+cd TAB_KEY : To Auto Complete directory.
+cd / : to go to the root of our HDD
+cd ~ : to go to your user directory.
+cd - : toggle between current direcotry and recent directory.
+
+pwd : present working directory.
+ 
