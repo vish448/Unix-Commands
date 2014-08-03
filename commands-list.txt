@@ -1,4 +1,4 @@
-Commands List
+√/Users/vishangsoni/Downloads/Torrent/Tomorrowland\ 2014 √Commands List
 =============
 
 Unix Commands Structure.
@@ -90,3 +90,72 @@ option attached with mv.
 -v : verbose
 
 
+==========================
+Ownership and permisssions
+===========================
+
+whoami : to know what user you are in.
+
+groups : to see what user groups available on your mac.
+
+chown(change owenership) : to change the owenership of the file or directory.
+
+chown OWENER_NAME FILE_NAME or DIRECTORY_NAME
+
+==================================
+FILE PERMISSIONS : ALPHA NOTATION
+==================================
+
+RWX
+Read, Write, Execute
+
+UGO :  SHORTHAND IS a
+User, Group, Other
+
+chmod MODE FILE_NAME : change mode to someting else
+i.e chmode ugo=rwx FILE_NAME
+    chmode u=rwx,g=rw,o=r FILE_NAME [standard]
+    chmode ug+w FILE_NAME : to alter the existing permission
+
+You can use a for UGO 
+====
+NOTE : + [plus] : to add permission, - [miinus] : to remove permission.
+====
+
+INFO : if you want to apply the permission to a folder and all the files inside it than you have to apply -R[Recursive] option with your chmod command.
+****
+i.e chmod -R g+w FOLDER_NAME
+
+================================
+FILE PERMISSION : OCTAL NOTATION
+================================
+
+r = 4 
+w = 2 
+x = 1
+
+i.e if you want to apply rwxrw-r-- to any file. you can add above value and make an octal notation for it. Here,for this permission the octal notation is 764
+
+777 = rwxrwxrwx
+764 = rwxrw-r--
+755 = rwxr-xr-x
+000 = ---------
+700 = rwx------
+
+chmod 777 FILE_NAME : You are giving full access of a file to every one.
+
+=============
+THE ROOT USER
+=============
+
+Superuser account that can do anything on the system. 
+Acutal name of sudo is 'substitute user do'.
+
+sudo
+
+HOW TO CHANGE THE USER
+sudo -u USER_NAME whoami 
+
+info: sudoers file located in /etc/sudoers. only adimin has access to this file.
+*****
+      All sudo settings are stored in this file. So handle with care if you are touching this file.
