@@ -159,3 +159,153 @@ sudo -u USER_NAME whoami
 info: sudoers file located in /etc/sudoers. only adimin has access to this file.
 *****
       All sudo settings are stored in this file. So handle with care if you are touching this file.
+
+
+================
+COMMANDS BASICS
+================
+All the commands which we are executing are located in 
+/bin folder
+for example : when you type echo "Hello world" So echo is stored in /bin folder. Basically you are telling termial to execute that file with hello world arguments.
+
+You can locate the command location with below command
+
+whereis COMMAND_NAME
+which COMMAND_NAME
+whatis COMMAND_NAME : will give you what command does in one line instructions.
+
+You can write multiple commands in oneline with separtion of semicolon.
+
+=============
+PATH VARIABLE
+=============
+
+echo $PATH : to display path on your screen.
+
+PATH=YOUR_PATH : to alter existed commands
+
+===========================
+SYSTEM INFORMATION COMMANDS
+===========================
+
+date : to display system date
+uptime : will tell you for how long your system is on.
+users: will show you users.
+who:  will show you all users. NOTE: every session of UNIX loggedin as a new user. i.e: if you open two terminal windows it will show you 2 uesers of terminal and one user as a finder.
+uname: displays the operating system name.
+uname -mnrsvp : give you the detail information about you system.
+uname -ap : shorthand command to above command.
+host : will give you the hostname
+domainname: will give you the domain name 
+These above two commands work well in network environments.
+
+=========================
+DISK INFORMATION COMMANDS
+=========================
+df[DISK FREESPACE] : will return the free disk space information.
+
+df -h [humanize] : to show data in human readable forms.
+df -H : base 10 calculator. For new HDD you can calculate with this base10 system and you will get that what your manufacturer has advertised.
+====
+NOTE : There are two ways one can calculate gigabyts. BASE 2 and BASE 10.
+==== 
+du PATH : show disk usage of all directories contained in that folder path
+du -ah PATH : will show disk usage of all directories and files within that folder path.
+
+du -hd 1 : [DiskUsage -humanizeDepth 1] : so will just go 1 level in depth of the directory.
+
+====
+NOTE :
+====
+ Difference between DU and LS comands are:
+DU: will display the space required by an actual block of the memoty required by a file or a folder.
+LS: will display the actual size taken by a file or a folder.
+
+==============================================================
+VIEWING PROCESSES : UNIX COMMANDS FOR MONITORING THE PROCESSES.
+==============================================================
+
+Kernal and Shell
+
+When we type a command in our bash terminal. it will communicate with kernal and get a help to achive those tasks.
+After that kernal book some space on Disk and start a process to achive that. And once we get the result from it the kernal will reclaim that memory space and so other processes can use those space.
+
+So basically kernal manages a processes for us.
+
+ps [process status] : it will give us report of running processes.
+
+ps -a  : show all processes running. not that helpful
+
+ps a : 
+
+ps aux 	[a: All processes running regared who owns it]
+	[u: Include a column of a user who owns that process]
+       	[x: Show me the background processes too.]
+
+==================
+MONITORING PROCESS
+==================
+top : to see recent processes on top with fill info and hit q to exit from that list
+top -n 10 -o cpu -s 3 -U vishangsoni [Top ten CPU processes refreshing every 3 seconds own by a user] : 
+
+=============
+STOP PROCESS
+=============
+ctrl + c to quit the process
+kill PROCESS_ID : stop the process 
+kill -9 PROCESS_ID : force quit the process
+
+
+=================
+TEXT FILE HELPERS
+=================
+wc : word count
+sort : sort lines
+sort -r : reverce sort
+soft -f : to igonre capital and small priority
+sort -u : sort with uniq capability
+uniq : filter in/out repeated lines. It will only look for one after antoher repeated lines.
+uniq -d : returns repeted lines
+uniq -u : unduplicated lines
+
+================
+UTILITY PROGRAMS
+================
+cal : calender program
+bc : calculator program
+expr : expression evaluator
+units : unit conversion
+
+
+cal MONTH YEAR : show you the calender of that month
+cal -y YEAR : show you the calender for full year
+cal -y : show full calender of current year
+ncal : to rearrange the calender : try out
+
+bc
+quit to get out from it
+
+scale = 10 : to change the prcesion of a decimal point
+
+expr 1 + 1 : if you give sace it will consider it as a one word.
+
+units
+
+=====================
+USING COMMAND HISTORY
+=====================
+All the unix commands are stored in .bash_history file inside your user direcotory
+
+you can read all previous commands which you typed in by reading .bash_history file
+
+history : to print all commands.
+
+shorthand for historty commands to run
+
+type in history : print all commands with number
+!COMMAND_NUMBER : will execute that command for you.
+!-COMMAND_NUMBER : will deduct that number from the current command number and execute the command
+history -d COMMAND_NUMBER : to delete the command from the history.
+hiarory -c : to clearout all commands in .bash_history file
+ 
+
