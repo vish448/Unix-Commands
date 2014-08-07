@@ -1,4 +1,4 @@
-√/Users/vishangsoni/Downloads/Torrent/Tomorrowland\ 2014 √Commands List
+Commands List
 =============
 
 Unix Commands Structure.
@@ -308,4 +308,174 @@ type in history : print all commands with number
 history -d COMMAND_NUMBER : to delete the command from the history.
 hiarory -c : to clearout all commands in .bash_history file
  
+=========================
+STANDARD INPUT AND OUTPUT
+=========================
+When you hit commands in unix it will give you the output of the command. But its not changing anything directly into the command to do that you need to direct it through > sign to a file.
+
+i.e. sort FILE_OUTPUT > NEW_FILE.
+     echo "HELLO WORLD" > helloworld.txt
+====
+NOTE: if you use this command on an existing file it will overwrite the content of the file.
+====
+
+====================
+APPENDING TO A FILE
+====================
+you can use two greter than sign
+>>
+
+i.e cat ONE_FILE.txt >> ANOTHER_FILE.txt
+it will append the output of one_file.txt to another_file.txt
+
+
+==========================
+DIRECTIN INPUT FROM A FILE
+==========================
+
+When you want to take an input from a file and pass it to a command than use < sign 
+
+i.e sort < SOME_FILE.txt
+what it does is give you an sorted output of SOME_FILE.txt
+
+wc < SOME_FILE.txt
+it will do wordcount of SOME_FILE.txt
+
+======================
+PIPING OUTPUT TO INPUT
+======================
+
+what it does.
+It will USE output of one command as an input of other command
+
+i.e echo "HELLO WORLD" | wc : it will count the word contained in forst command
+    echo "(5*89)+(34*90)" | bc : it will use the expression as an input to a bench calculator
+
+===================
+SUPRESSING OUTPUT
+===================
+Sometime you just dont need to see the output of the file. or say you dont care about the output of the file. 
+You can direct those output to a /dev/null file. it consider as a black hole. Means whatever output directed to this file will be dicareded by the unix system.
+
+i.e commmand > /dev/null
+    ls -la > /dev/null
+    echo "Hello world" > /dev/null
+
+
+================================
+PROFILE LOGIN AND RESOURCE FILES
+================================
+
+On mac when you open the terminal you autometically loggedin to the terminal window.
+
+When you open terminal it will read the  /etc/profile file.
+You dont want to touch this as APPLE does take care of it for us.
+
+So bash first run the commnads within this directory and than it will look for another user customisation direcotries in the order below
+
+~/.bash_profile, ~/.bash_login , ~/.profile , ~/.login
+
+Notice that all directories containg ,(period) so mac understands that its a configuration and invisible files.
+
+system reads the commands in above direcoties. so if system finds commands in any of the direcotry it will run those command and igore others.
+So if it finds commands in first directory it will not going further.
+
+When you open a termimal window you will login into the bash shell.
+and when you type bash command on terminal it will open up the new sub shell.
+and than it will execute the commands in ~/.bashrc rc indicates resource.
+
+so whatever commands we write in ~/.bash_profile it will available to us once we login to the bash
+and whatever commands we write in ~/.bashrc will available to us after we login to subshell.
+
+
+NOTE: whenever we logout from bash it will run the commands from ~/.bash_logout file
+
+
+Basic Example to configure your SHELL.
+
+Write whatever you want to appear on your terminal window on login inside. ~/.bash_profile file
+
+
+=======================
+SETTING COMMAND ALIASES
+=======================
+
+alias: will display all aliases defined in command aliases.
+alias ALIAS_NAME='COMMAND_NAME' : So with this command basically you're telling terminal to execute the command when someone types that ALIAS_NAME
+unalia ALIAS_NAME : to remove the alias
+
+====
+NOTE: aliases only last for current login. once you close the window it will remove the alias form the system.
+====
+
+===
+TIP: If you want permanent alias whenever you login to your terminal write alias in .bash_profile of .bashrc files. So whenever you open terminal your aliases will be there.
+===
+
+source FILE_NAME : to execute the file.
+
+===========================================
+SETTING AND EXPORTING ENVIRONMENT VARIABLES
+===========================================
+
+Environment variables also known as SHELL vaiable.
+
+ When you set the vaiable you don't use $ sign.
+To retrive those variable you use $ sign.
+
+i.e : MyNAME = "Vishang"
+      $MyName will give you the output as a Vishang
+
+ 
+
+=========================
+SETTING THE PATH VARIABLE
+=========================
+
+PATH = '' : To unset the whole unix library. [DO NOT USE. DISTRUCTIVE]
+
+
+==================================
+CONFIGURING HISTORY WITH VARIABLES
+==================================
+
+history -c : to clear out your current history
+
+example to set history in .bashsrc file
+
+export HISTSIZE =10000              #500 is default
+export HISTFILESIZE = 1000000
+export HISTTIMEFORMAT = '%B %D %I:%M %p'  # using strftime format
+export HISTCONTROL = ignoreboth           # ignoredups:ignorespace
+export HISTIGONRE = "history:pwd:exit:df:ls:ls -la:ll'"
+
+===============================
+CUSTOMISING THE COMMAND PROMPT
+==============================
+PS1 = "--> " this is how you customize your prompt.
+
+Command prompt formating codes:
+
+\u : username
+\s : current shell
+\w : current working directory
+\W : basename of current working directory
+\d : date in "weekday month date" format 
+\D : date in strftime format ("%Y-%m-%d")
+\A : time in 24-hour HH:MM:SS
+\t : time in 24-hour HH:MM:SS format
+\@ : time in 12-hour HH:MM am/pm format
+\T : time in 12-hour HH:MM:SS format
+\H : hostname
+\h : hostname up to first "."
+\i : history number of this command
+\$ : when UID is 0 (root), a "#", otherwise a "$"
+\\ : a literal backslash
+
+MAC DEFAULT PROMT: PS1="\h:\W \u$ "
+
+===========
+LOGOUT FILE
+===========
+ create .bash_logout file and put your configuration when your user logout or end the current session.
 
