@@ -91,6 +91,13 @@ mv also use to rename the file or folder
 
 mv "Folder/File Name" "NewFolder/File Name"
 
+================================
+REMOVE OR DELELE COMMANDS
+==============================
+rm "FILE or FOLDER" : it will remove the file or folder. Before remove the folder it will ask you for permission.
+
+
+rm -RF "FILE or FOLDER" : remove file or folder forcefully. -rf argument stands for remove forcefully. So basically it will not ask you for permission to delete CAUSTION: USE IT CAREFULLY. DO NOT FIRE THIE COMMAND ON YOUR ROOT DIRECOTORY ~/. IT WILL DELETE YOUR SYSTEMS FILES WHICH HARD TO INPOSSIBLE TO RECOVER. 
 
 ==========================
 Ownership and permisssions
