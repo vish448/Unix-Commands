@@ -73,21 +73,23 @@ NOTE : This follow command is very useful to check log files in your system. For
 ====================
 CREATING DIRECTORIES
 ====================
-
 mkdir DIR_NAME : to create a directory.
 
 mkdir -p DIR_NAME/DIR2_NAME/DIR3_NAME : to create multiple directory with one command.
 
 ===============================
 MOVING AND RENAMING DIRECTORIES
-===============================
- 
+=============================== 
 mv FILE_NAME DESTINATION : moving file from one to another folder.  
 option attached with mv.
 -n : no overwriting
 -f : force overwriting [Default]
 -i : interactive overwriting, "Ask me"
 -v : verbose
+
+mv also use to rename the file or folder
+
+mv "Folder/File Name" "NewFolder/File Name"
 
 
 ==========================
